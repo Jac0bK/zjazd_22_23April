@@ -19,4 +19,7 @@ class RegistrationTests(unittest.TestCase):
 
 
     def testNoNameEntered(self):
-        pass
+        #Kroki
+        #1a) kliknij zarejestruj
+        #1b)
+        self.driver.find_element()
