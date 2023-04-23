@@ -31,6 +31,8 @@ class RegistrationTests(unittest.TestCase):
 
 
 
+
+
     def testNoNameEntered(self):
         #Kroki
         #1a) kliknij zarejestruj
@@ -38,3 +40,8 @@ class RegistrationTests(unittest.TestCase):
         zarejestruj_a = self.driver.find_element(By.PARTIAL_LINK_TEXT, "Zarejestruj")
         zarejestruj_a.click()
 
+def dodaj_advanced(*args):
+    wynik = 0
+    for arg in args:
+        wynik = wynik + arg
+    return wynik
