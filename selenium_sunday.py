@@ -6,6 +6,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.relative_locator import locate_with
+from faker import Faker
 from time import sleep
 
 # DANE TESTOWE
@@ -16,6 +17,7 @@ haslo = "qwerty123!"
 class RegistrationTests(unittest.TestCase):
     def setUp(self):
         # Przygotowanie testu
+        self.fake = Faker("pl_PL")
         # 1. Otwarta strona główna
         # 1a) Tworzę instancję klasy Chrome()
         self.driver = webdriver.Chrome()
@@ -41,7 +43,7 @@ class RegistrationTests(unittest.TestCase):
         # 2. Wpisz nazwisko
         # Odszukaj, wpisz
         nazwisko_input = self.driver.find_element(By.ID, "lastname")
-        nazwisko_input.send_keys(nazwisko)
+        nazwisko_input.send_keys(self.fake.last_name())
         # 3. Wpisz email
         email_input = self.driver.find_element(By.ID, "email_address")
         email_input.send_keys(email)
